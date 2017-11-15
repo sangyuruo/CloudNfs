@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity MessageTemplate.
+    -->
+    <changeSet id="20171115103409-1" author="jhipster">
+        <createTable tableName="message_template">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="jhi_oid" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="content" type="varchar(200)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="param_flag" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="jhi_type" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sms_send_channel" type="varchar(50)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="remark" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jhi_enable" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_by" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_time" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="updated_by" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="update_time" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="message_template" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="message_template" columnName="update_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>
