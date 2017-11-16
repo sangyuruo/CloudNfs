@@ -39,6 +39,18 @@ public class NotifyLogServiceImpl implements NotifyLogService{
     }
 
     /**
+     * Update a notifyLog.
+     *
+     * @param notifyLog the entity to update
+     * @return the persisted entity
+     */
+    @Override
+    public NotifyLog update(NotifyLog notifyLog) {
+        log.debug("Request to save NotifyLog : {}", notifyLog);
+        return notifyLogRepository.save(notifyLog);
+    }
+
+    /**
      *  Get all the notifyLogs.
      *
      *  @param pageable the pagination information

@@ -17,6 +17,15 @@ public interface NotifyLogService {
      */
     NotifyLog save(NotifyLog notifyLog);
 
+
+    /**
+     * Update a notifyLog.
+     *
+     * @param notifyLog the entity to update
+     * @return the persisted entity
+     */
+    NotifyLog update(NotifyLog notifyLog);
+
     /**
      *  Get all the notifyLogs.
      *

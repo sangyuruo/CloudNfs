@@ -77,7 +77,7 @@ public class MessageTemplateResource {
         if (messageTemplate.getId() == null) {
             return createMessageTemplate(messageTemplate);
         }
-        MessageTemplate result = messageTemplateService.save(messageTemplate);
+        MessageTemplate result = messageTemplateService.update(messageTemplate);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, messageTemplate.getId().toString()))
             .body(result);

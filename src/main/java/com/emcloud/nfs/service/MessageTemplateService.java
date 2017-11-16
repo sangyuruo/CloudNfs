@@ -17,6 +17,15 @@ public interface MessageTemplateService {
      */
     MessageTemplate save(MessageTemplate messageTemplate);
 
+
+    /**
+     * Update a messageTemplate.
+     *
+     * @param messageTemplate the entity to update
+     * @return the persisted entity
+     */
+    MessageTemplate update(MessageTemplate messageTemplate);
+
     /**
      *  Get all the messageTemplates.
      *

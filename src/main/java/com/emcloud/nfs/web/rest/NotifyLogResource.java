@@ -77,7 +77,7 @@ public class NotifyLogResource {
         if (notifyLog.getId() == null) {
             return createNotifyLog(notifyLog);
         }
-        NotifyLog result = notifyLogService.save(notifyLog);
+        NotifyLog result = notifyLogService.update(notifyLog);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, notifyLog.getId().toString()))
             .body(result);

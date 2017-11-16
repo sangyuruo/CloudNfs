@@ -39,6 +39,18 @@ public class MessageTemplateServiceImpl implements MessageTemplateService{
     }
 
     /**
+     * Update a messageTemplate.
+     *
+     * @param messageTemplate the entity to update
+     * @return the persisted entity
+     */
+    @Override
+    public MessageTemplate update(MessageTemplate messageTemplate) {
+        log.debug("Request to save MessageTemplate : {}", messageTemplate);
+        return messageTemplateRepository.save(messageTemplate);
+    }
+
+    /**
      *  Get all the messageTemplates.
      *
      *  @param pageable the pagination information
