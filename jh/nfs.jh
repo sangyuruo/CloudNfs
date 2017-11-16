@@ -6,7 +6,7 @@
 
 entity  MessageTemplate{
     /** 业务主键 */
-	oid String required,
+	mt_Code String required,
 	/** 内容 */
     content String maxlength(200) required,
     /** 是否包含参数：1，包含；0，不包含 */
@@ -45,8 +45,8 @@ entity NotifyLog{
 	content String maxlength(200) required ,
 	/** 状态 1--成功，0--失败*/
 	status Boolean required,
-	/** 是否已读， 1--已读，0--未读 */
-	readFlag Boolean required ,
+	/** 是否已读，撤销 */
+	readFlag Integer required ,
     /** 创建人 */
     createdBy String maxlength(20) required,
     /** 创建时间 */
