@@ -32,8 +32,8 @@ public class MessageTemplate implements Serializable {
      */
     @NotNull
     @ApiModelProperty(value = "业务主键", required = true)
-    @Column(name = "jhi_oid", nullable = false)
-    private String oid;
+    @Column(name = "mt_code", nullable = false)
+    private String mtCode;
 
     /**
      * 内容
@@ -124,16 +124,16 @@ public class MessageTemplate implements Serializable {
     }
 
     public String getOid() {
-        return oid;
+        return mtCode;
     }
 
     public MessageTemplate oid(String oid) {
-        this.oid = oid;
+        this.mtCode = oid;
         return this;
     }
 
     public void setOid(String oid) {
-        this.oid = oid;
+        this.mtCode = oid;
     }
 
     public String getContent() {
