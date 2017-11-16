@@ -57,7 +57,7 @@ public class MessageTemplate implements Serializable {
      */
     @NotNull
     @ApiModelProperty(value = "类型：1短信；2邮件；3app通知", required = true)
-    @Column(name = "jhi_type", nullable = false)
+    @Column(name = "type", nullable = false)
     private Integer type;
 
     /**
@@ -81,7 +81,7 @@ public class MessageTemplate implements Serializable {
      */
     @NotNull
     @ApiModelProperty(value = "是否可用", required = true)
-    @Column(name = "jhi_enable", nullable = false)
+    @Column(name = "enable", nullable = false)
     private Integer enable;
 
     /**
