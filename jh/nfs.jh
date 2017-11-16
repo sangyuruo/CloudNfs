@@ -6,7 +6,7 @@
 
 entity  MessageTemplate{
     /** 业务主键 */
-	mt_Code String required,
+	mtCode String required,
 	/** 内容 */
     content String maxlength(200) required,
     /** 是否包含参数：1，包含；0，不包含 */
