@@ -70,12 +70,12 @@ public class NotifyLog implements Serializable {
     private Boolean status;
 
     /**
-     * 是否已读， 1--已读，0--未读
+     * 是否已读，撤销
      */
     @NotNull
-    @ApiModelProperty(value = "是否已读， 1--已读，0--未读", required = true)
+    @ApiModelProperty(value = "是否已读，撤销", required = true)
     @Column(name = "read_flag", nullable = false)
-    private Boolean readFlag;
+    private Integer readFlag;
 
     /**
      * 创建人
@@ -173,16 +173,16 @@ public class NotifyLog implements Serializable {
         this.status = status;
     }
 
-    public Boolean isReadFlag() {
+    public Integer isReadFlag() {
         return readFlag;
     }
 
-    public NotifyLog readFlag(Boolean readFlag) {
+    public NotifyLog readFlag(Integer readFlag) {
         this.readFlag = readFlag;
         return this;
     }
 
-    public void setReadFlag(Boolean readFlag) {
+    public void setReadFlag(Integer readFlag) {
         this.readFlag = readFlag;
     }
 
