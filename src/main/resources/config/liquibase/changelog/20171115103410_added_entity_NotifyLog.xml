@@ -42,7 +42,7 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="read_flag" type="bit">
+            <column name="read_flag" type="integer">
                 <constraints nullable="false" />
             </column>
 
