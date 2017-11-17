@@ -123,16 +123,16 @@ public class MessageTemplate implements Serializable {
         this.id = id;
     }
 
-    public String getOid() {
+    public String getMtCode() {
         return mtCode;
     }
 
-    public MessageTemplate oid(String oid) {
+    public MessageTemplate mtCode(String oid) {
         this.mtCode = oid;
         return this;
     }
 
-    public void setOid(String oid) {
+    public void setMtCode(String oid) {
         this.mtCode = oid;
     }
 
@@ -291,7 +291,7 @@ public class MessageTemplate implements Serializable {
     public String toString() {
         return "MessageTemplate{" +
             "id=" + getId() +
-            ", oid='" + getOid() + "'" +
+            ", oid='" + getMtCode() + "'" +
             ", content='" + getContent() + "'" +
             ", paramFlag='" + isParamFlag() + "'" +
             ", type='" + getType() + "'" +
