@@ -1,5 +1,6 @@
 package com.emcloud.nfs.service.impl;
 
+import com.emcloud.nfs.security.SecurityUtils;
 import com.emcloud.nfs.service.MessageTemplateService;
 import com.emcloud.nfs.domain.MessageTemplate;
 import com.emcloud.nfs.repository.MessageTemplateRepository;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Instant;
 
 
 /**
@@ -35,6 +38,10 @@ public class MessageTemplateServiceImpl implements MessageTemplateService{
     @Override
     public MessageTemplate save(MessageTemplate messageTemplate) {
         log.debug("Request to save MessageTemplate : {}", messageTemplate);
+        messageTemplate.setCreatedBy(SecurityUtils.getCurrentUserLogin());
+        messageTemplate.setCreateTime(Instant.now());
+        messageTemplate.setUpdatedBy(SecurityUtils.getCurrentUserLogin());
+        messageTemplate.setUpdateTime(Instant.now());
         return messageTemplateRepository.save(messageTemplate);
     }
 
@@ -47,6 +54,8 @@ public class MessageTemplateServiceImpl implements MessageTemplateService{
     @Override
     public MessageTemplate update(MessageTemplate messageTemplate) {
         log.debug("Request to save MessageTemplate : {}", messageTemplate);
+        messageTemplate.setUpdatedBy(SecurityUtils.getCurrentUserLogin());
+        messageTemplate.setUpdateTime(Instant.now());
         return messageTemplateRepository.save(messageTemplate);
     }
 
