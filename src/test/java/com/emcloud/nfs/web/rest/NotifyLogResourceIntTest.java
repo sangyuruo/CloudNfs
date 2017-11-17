@@ -58,8 +58,8 @@ public class NotifyLogResourceIntTest {
     private static final Boolean DEFAULT_STATUS = false;
     private static final Boolean UPDATED_STATUS = true;
 
-    private static final Boolean DEFAULT_READ_FLAG = false;
-    private static final Boolean UPDATED_READ_FLAG = true;
+    private static final Integer DEFAULT_READ_FLAG = 0;
+    private static final Integer UPDATED_READ_FLAG = 1;
 
     private static final String DEFAULT_CREATED_BY = "AAAAAAAAAA";
     private static final String UPDATED_CREATED_BY = "BBBBBBBBBB";
@@ -351,7 +351,7 @@ public class NotifyLogResourceIntTest {
             .andExpect(jsonPath("$.[*].sendTarget").value(hasItem(DEFAULT_SEND_TARGET.toString())))
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.booleanValue())))
-            .andExpect(jsonPath("$.[*].readFlag").value(hasItem(DEFAULT_READ_FLAG.booleanValue())))
+            .andExpect(jsonPath("$.[*].readFlag").value(hasItem(DEFAULT_READ_FLAG)))
             .andExpect(jsonPath("$.[*].createdBy").value(hasItem(DEFAULT_CREATED_BY.toString())))
             .andExpect(jsonPath("$.[*].createTime").value(hasItem(DEFAULT_CREATE_TIME.toString())))
             .andExpect(jsonPath("$.[*].updateTime").value(hasItem(DEFAULT_UPDATE_TIME.toString())));
@@ -373,7 +373,7 @@ public class NotifyLogResourceIntTest {
             .andExpect(jsonPath("$.sendTarget").value(DEFAULT_SEND_TARGET.toString()))
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.booleanValue()))
-            .andExpect(jsonPath("$.readFlag").value(DEFAULT_READ_FLAG.booleanValue()))
+            .andExpect(jsonPath("$.readFlag").value(DEFAULT_READ_FLAG))
             .andExpect(jsonPath("$.createdBy").value(DEFAULT_CREATED_BY.toString()))
             .andExpect(jsonPath("$.createTime").value(DEFAULT_CREATE_TIME.toString()))
             .andExpect(jsonPath("$.updateTime").value(DEFAULT_UPDATE_TIME.toString()));
