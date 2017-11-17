@@ -48,8 +48,8 @@
         },
         {
             "fieldName": "readFlag",
-            "javadoc": "是否已读， 1--已读，0--未读",
-            "fieldType": "Boolean",
+            "javadoc": "是否已读，撤销",
+            "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"
             ]
