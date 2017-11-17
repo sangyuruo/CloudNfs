@@ -82,7 +82,7 @@ public class MessageTemplate implements Serializable {
     @NotNull
     @ApiModelProperty(value = "是否可用", required = true)
     @Column(name = "enable", nullable = false)
-    private Integer enable;
+    private Boolean enable;
 
     /**
      * 创建人
@@ -201,16 +201,16 @@ public class MessageTemplate implements Serializable {
         this.remark = remark;
     }
 
-    public Integer getEnable() {
+    public Boolean getEnable() {
         return enable;
     }
 
-    public MessageTemplate enable(Integer enable) {
+    public MessageTemplate enable(Boolean enable) {
         this.enable = enable;
         return this;
     }
 
-    public void setEnable(Integer enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 
