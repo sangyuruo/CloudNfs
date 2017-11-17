@@ -1,5 +1,6 @@
 package com.emcloud.nfs.service.impl;
 
+import com.emcloud.nfs.security.SecurityUtils;
 import com.emcloud.nfs.service.NotifyLogService;
 import com.emcloud.nfs.domain.NotifyLog;
 import com.emcloud.nfs.repository.NotifyLogRepository;
@@ -9,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Instant;
 
 
 /**
@@ -35,6 +38,9 @@ public class NotifyLogServiceImpl implements NotifyLogService{
     @Override
     public NotifyLog save(NotifyLog notifyLog) {
         log.debug("Request to save NotifyLog : {}", notifyLog);
+        notifyLog.setCreatedBy(SecurityUtils.getCurrentUserLogin());
+        notifyLog.setCreateTime(Instant.now());
+        notifyLog.setUpdateTime(Instant.now());
         return notifyLogRepository.save(notifyLog);
     }
 
@@ -47,6 +53,7 @@ public class NotifyLogServiceImpl implements NotifyLogService{
     @Override
     public NotifyLog update(NotifyLog notifyLog) {
         log.debug("Request to save NotifyLog : {}", notifyLog);
+        notifyLog.setUpdateTime(Instant.now());
         return notifyLogRepository.save(notifyLog);
     }
 
