@@ -18,7 +18,7 @@ entity  MessageTemplate{
 	/** 备注 */
 	remark String maxlength(500),
     /** 是否可用 */
-    enable Integer required,
+    enable Boolean required,
     /** 创建人 */
     createdBy String maxlength(20) required,
     /** 创建时间 */
