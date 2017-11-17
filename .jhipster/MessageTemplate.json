@@ -3,7 +3,7 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "oid",
+            "fieldName": "mtCode",
             "javadoc": "业务主键",
             "fieldType": "String",
             "fieldValidateRules": [
@@ -57,7 +57,7 @@
         {
             "fieldName": "enable",
             "javadoc": "是否可用",
-            "fieldType": "Integer",
+            "fieldType": "Boolean",
             "fieldValidateRules": [
                 "required"
             ]
