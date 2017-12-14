@@ -291,7 +291,7 @@ public class MessageTemplate implements Serializable {
     public String toString() {
         return "MessageTemplate{" +
             "id=" + getId() +
-            ", oid='" + getMtCode() + "'" +
+            ",mtCode='" + getMtCode() + "'" +
             ", content='" + getContent() + "'" +
             ", paramFlag='" + isParamFlag() + "'" +
             ", type='" + getType() + "'" +

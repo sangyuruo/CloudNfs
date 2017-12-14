@@ -117,7 +117,7 @@ public class MessageTemplateResourceIntTest {
      */
     public static MessageTemplate createEntity(EntityManager em) {
         MessageTemplate messageTemplate = new MessageTemplate()
-            .oid(DEFAULT_OID)
+            .mtCode(DEFAULT_OID)
             .content(DEFAULT_CONTENT)
             .paramFlag(DEFAULT_PARAM_FLAG)
             .type(DEFAULT_TYPE)
@@ -151,7 +151,7 @@ public class MessageTemplateResourceIntTest {
         List<MessageTemplate> messageTemplateList = messageTemplateRepository.findAll();
         assertThat(messageTemplateList).hasSize(databaseSizeBeforeCreate + 1);
         MessageTemplate testMessageTemplate = messageTemplateList.get(messageTemplateList.size() - 1);
-        assertThat(testMessageTemplate.getOid()).isEqualTo(DEFAULT_OID);
+        assertThat(testMessageTemplate.getMtCode()).isEqualTo(DEFAULT_OID);
         assertThat(testMessageTemplate.getContent()).isEqualTo(DEFAULT_CONTENT);
         assertThat(testMessageTemplate.isParamFlag()).isEqualTo(DEFAULT_PARAM_FLAG);
         assertThat(testMessageTemplate.getType()).isEqualTo(DEFAULT_TYPE);
@@ -188,7 +188,7 @@ public class MessageTemplateResourceIntTest {
     public void checkOidIsRequired() throws Exception {
         int databaseSizeBeforeTest = messageTemplateRepository.findAll().size();
         // set the field null
-        messageTemplate.setOid(null);
+        messageTemplate.setMtCode(null);
 
         // Create the MessageTemplate, which fails.
 
@@ -412,7 +412,7 @@ public class MessageTemplateResourceIntTest {
         // Update the messageTemplate
         MessageTemplate updatedMessageTemplate = messageTemplateRepository.findOne(messageTemplate.getId());
         updatedMessageTemplate
-            .oid(UPDATED_OID)
+            .mtCode(UPDATED_OID)
             .content(UPDATED_CONTENT)
             .paramFlag(UPDATED_PARAM_FLAG)
             .type(UPDATED_TYPE)
@@ -433,7 +433,7 @@ public class MessageTemplateResourceIntTest {
         List<MessageTemplate> messageTemplateList = messageTemplateRepository.findAll();
         assertThat(messageTemplateList).hasSize(databaseSizeBeforeUpdate);
         MessageTemplate testMessageTemplate = messageTemplateList.get(messageTemplateList.size() - 1);
-        assertThat(testMessageTemplate.getOid()).isEqualTo(UPDATED_OID);
+        assertThat(testMessageTemplate.getMtCode()).isEqualTo(UPDATED_OID);
         assertThat(testMessageTemplate.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testMessageTemplate.isParamFlag()).isEqualTo(UPDATED_PARAM_FLAG);
         assertThat(testMessageTemplate.getType()).isEqualTo(UPDATED_TYPE);
